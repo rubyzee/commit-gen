@@ -1,5 +1,5 @@
 # Tukang Commit
-[![Tukang Commit](https://github.com/xyzuan/commit-gen/actions/workflows/bot.yml/badge.svg)](https://github.com/xyzuan/commit-gen/actions/workflows/bot.yml)
+[![Tukang Commit](https://github.com/rubyzee/commit-gen/actions/workflows/bot.yml/badge.svg)](https://github.com/rubyzee/commit-gen/actions/workflows/bot.yml)
 A bot that can make your Github stats green with scheduled auto commit.
 
 ## How to use
