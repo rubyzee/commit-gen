@@ -19,7 +19,7 @@ jobs:
           
       - name: Modify last update
         run: | 
-          d=`date '+%Y-%m-%dT%H:%M:%SZ'`
+          d="$(TZ=Asia/Jakarta date +"%Y%m%d-%T")"
           echo "## 🤔 LAST UPDATED AT: ${d}" > update.md
 
       - name: Commit changes
@@ -37,7 +37,7 @@ jobs:
           arr[6]="bot: 🙄 Running task, again."
           arr[7]="bot: 👻 Thanks master."
 
-          d=`date '+%Y-%m-%dT%H:%M:%SZ'`
+          d="$(TZ=Asia/Jakarta date +"%Y%m%d-%T")"
           rand=$[$RANDOM % ${#arr[@]}]
           
           git commit -am "${arr[$rand]} (at ${d})"
