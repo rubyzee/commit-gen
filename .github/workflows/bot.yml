@@ -1,4 +1,4 @@
-name: Tukang Commit
+name: Commit-Gen
 
 on:
   push:
@@ -17,30 +17,10 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
           
-      - name: Modify last update
-        run: | 
-          d="$(TZ=Asia/Jakarta date +"%Y%m%d-%T")"
-          echo "## 🤔 LAST UPDATED AT: ${d}" > update.md
-
-      - name: Commit changes
+      - name: Run Bot Task
         run: |
-          git config --local user.email "regidesoftian@gmail.com"
-          git config --local user.name "Egii"
-          git add -A
-
-          arr[0]="bot: 👋 Hello Github!"
-          arr[1]="bot: 🥳 Yeayyy!"
-          arr[2]="bot: 😬 Working from github."
-          arr[3]="bot: 👨‍💻 Work, work, work!"
-          arr[4]="bot: 😪 Hufft..."
-          arr[5]="bot: 😎 I'm working for my master!"
-          arr[6]="bot: 🙄 Running task, again."
-          arr[7]="bot: 👻 Thanks master."
-
-          d="$(TZ=Asia/Jakarta date +"%Y%m%d-%T")"
-          rand=$[$RANDOM % ${#arr[@]}]
-          
-          git commit -am "${arr[$rand]} (at ${d})"
+          chmod +x ./task.sh
+          ./task.sh
           
       - name: GitHub Push
         uses: ad-m/github-push-action@master
