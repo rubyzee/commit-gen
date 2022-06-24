@@ -14,7 +14,7 @@ d="$(TZ=Asia/Jakarta date +"%Y%m%d-%T")"
 
 echo "## 🤔 LAST UPDATED AT: ${d}" > update.md
 
-git config --local user.email "himemori@proton.me"
+git config --local user.email "himemori@mail.com"
 git config --local user.name "Himemorii"
 git add --all
 git commit --signoff --message "${arr[$rand]} (at ${d})"
